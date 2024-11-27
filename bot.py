@@ -1,9 +1,6 @@
-#!/usr/bin/env python3
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters
 import re
-import time
-import asyncio
 
 # Initialize global variable to store the current sum
 current_sum = 0
@@ -43,7 +40,7 @@ async def handle_message(update: Update, context):
 
 
 # Main function to set up the bot
-async def main():
+def main():
     global current_sum
     # Get your bot's API token from BotFather
     token = '7966615209:AAFFODIXmczgGwv5jpklNHiYlbYJVmCbGHM'  # Replace with your token
@@ -56,13 +53,9 @@ async def main():
     application.add_handler(CommandHandler("resetuj", resetuj))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
-    # Start the bot and stop after 1 second
-    # Running the bot asynchronously, and then shutting down after 60 second
-    try:
-        await asyncio.sleep(60)  # Wait for 60 second
-        await application.shutdown()  # Shut down the bot after 60 second
-    except asyncio.CancelledError:
-        pass  # Handle the case where we want to cancel the bot
+    # Start the bot
+    application.run_polling()
+
 
 if __name__ == '__main__':
-    asyncio.run(main())
+    main()
