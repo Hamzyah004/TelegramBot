@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters
 import re
@@ -57,7 +58,6 @@ def main():
     # Start the bot
     application.run_polling()
 
-    time.sleep(5)
 
 
 if __name__ == '__main__':
