@@ -1,6 +1,8 @@
+#!/usr/bin/env python3
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters
 import re
+import time
 
 # Initialize global variable to store the current sum
 current_sum = 0
@@ -55,6 +57,7 @@ def main():
 
     # Start the bot
     application.run_polling()
+
 
 
 if __name__ == '__main__':
