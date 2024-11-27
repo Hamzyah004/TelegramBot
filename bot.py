@@ -46,7 +46,7 @@ async def handle_message(update: Update, context):
 async def main():
     global current_sum
     # Get your bot's API token from BotFather
-    token = 'YOUR_BOT_TOKEN'  # Replace with your token
+    token = '7966615209:AAFFODIXmczgGwv5jpklNHiYlbYJVmCbGHM'  # Replace with your token
 
     # Create the Application and pass in the bot's token
     application = Application.builder().token(token).build()
