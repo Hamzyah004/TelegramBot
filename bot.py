@@ -57,10 +57,10 @@ async def main():
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
     # Start the bot and stop after 1 second
-    # Running the bot asynchronously, and then shutting down after 1 second
+    # Running the bot asynchronously, and then shutting down after 60 second
     try:
-        await asyncio.sleep(1)  # Wait for 1 second
-        await application.shutdown()  # Shut down the bot after 1 second
+        await asyncio.sleep(60)  # Wait for 60 second
+        await application.shutdown()  # Shut down the bot after 60 second
     except asyncio.CancelledError:
         pass  # Handle the case where we want to cancel the bot
 
